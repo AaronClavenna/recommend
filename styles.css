@@ -4,27 +4,31 @@ body {
 }
 #recommendations-container {
   border: 1px solid firebrick;
-  padding: 10px;
-  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(var(--num-columns, 3), 1fr);
+  grid-gap: 20px;
 }
 
-.organic-recommendation-indivdual,
-.sponsored-recommendation-indivdual {
+.organic-recommendation-individual,
+.sponsored-recommendation-individual {
   border: 2px solid purple;
   padding: 10px;
   margin: 10px;
-  width: 125px;
+  width: 100%;
+  max-width: var(--item-width, 150px);
 
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 600px) {
-  .organic-recommendation-indivdual,
-  .sponsored-recommendation-indivdual {
+  .organic-recommendation-individual,
+  .sponsored-recommendation-individual {
     flex-direction: column;
   }
+}
+
+.caption-area {
+  justify-content: center;
 }
 
 a {
