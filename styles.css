@@ -1,3 +1,49 @@
-.test_class {
-    color: blue;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+#recommendations-container {
+  border: 1px solid firebrick;
+  padding: 10px;
+  margin: 10px;
+}
+
+.organic-recommendation-indivdual,
+.sponsored-recommendation-indivdual {
+  border: 2px solid purple;
+  padding: 10px;
+  margin: 10px;
+  width: 125px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .organic-recommendation-indivdual,
+  .sponsored-recommendation-indivdual {
+    flex-direction: column;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid green;
+  margin: 10px;
+}
+
+a:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.caption {
+  font-size: medium;
+  margin-top: 5px;
+}
+
+.source {
+  font-size: x-small;
+  color: #666;
 }
