@@ -1,7 +1,7 @@
 import { validateThumbnailSize } from "./validateThumbnailSize.mjs";
 
 function resizeAndCropImage(thumbnailURL) {
-  const { width: validatedWidth, height: validatedHeight } = validateThumbnailSize();
+  const { thumbnailWidth, thumbnailHeight } = validateThumbnailSize();
 
   return new Promise((resolve) => {
     const image = new Image();
@@ -9,8 +9,6 @@ function resizeAndCropImage(thumbnailURL) {
 
     image.onload = () => {
       const { width, height } = image;
-      const thumbnailWidth = validatedWidth || width;
-      const thumbnailHeight = validatedHeight || height;
 
     let newWidth, newHeight;
     let offsetX = 0, offsetY = 0;
