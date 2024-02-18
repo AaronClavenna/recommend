@@ -9,12 +9,19 @@ Either download this file as a ZIP and unzip it into your directory, or clone th
 
 Then, insert this code snippet into the body of your HTML file, in the location where you would like this widget to appear: 
 
+##### FOR DOWNLOADED FILES:
 ```
 <div id="recommendations-content-container"></div>
 <script type="module" src="recommendationsScript.js" defer></script>
 ```
- 
 **!NOTE!**: the src may need to be adjusted depending on into which directory you've placed this program's files. 
+
+##### FROM GITHUB (limited access):
+```
+<div id="recommendations-content-container"></div>
+<script type="module" src="https://aaronclavenna.github.io/recommend/recommendationsScript.js" defer></script>
+```
+
 
 ## SETTINGS OVERVIEW: 
 
