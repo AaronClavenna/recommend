@@ -1,2 +1,4 @@
 # .gitignore content
 Notes.txt
+jest.config.js 
+__tests__
