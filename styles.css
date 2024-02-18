@@ -12,10 +12,9 @@ body {
 .sponsored-recommendation-individual {
   width: 100%;
   max-width: var(--item-width);
-
+  margin: 2px;
   display: flex;
 }
-
 
 a {
   text-decoration: none;
@@ -24,7 +23,7 @@ a {
 }
 
 a:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 .individual-internal {
@@ -36,7 +35,6 @@ a:hover {
 .caption-area {
   margin-left: 6px;
   overflow-wrap: break-word;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
@@ -47,7 +45,6 @@ a:hover {
 }
 
 .source {
-  font-size: 0.5em;
+  font-size: 0.6em;
   color: #666;
-  margin-top: auto;
 }

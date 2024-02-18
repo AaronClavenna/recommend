@@ -1,19 +1,24 @@
 import { SETTINGS } from "./settings.mjs";
 
 function validateThumbnailSize() {
-    const { THUMBNAIL_SIZE } = SETTINGS;
-    const itemWidth = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--item-width')) -12;
+    const itemWidth = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--item-width'));
 
-    let thumbnailWidth = parseFloat(THUMBNAIL_SIZE?.width) || itemWidth;
-    let thumbnailHeight = parseFloat(THUMBNAIL_SIZE?.height) || itemWidth;
+    let thumbnailWidth = itemWidth || 100;
+    let thumbnailHeight = itemWidth || 100;
 
 
-    if (isNaN(thumbnailWidth) || thumbnailWidth > itemWidth) {
-        thumbnailWidth = itemWidth;
-    }
-
-    if (isNaN(thumbnailHeight) || thumbnailHeight > itemWidth) {
-        thumbnailHeight = itemWidth;
+    switch (SETTINGS.ORIENTATION) {
+        case 'below':
+            thumbnailHeight = 0.7*thumbnailWidth;
+            break;
+        case 'aside':
+            thumbnailHeight = itemWidth / 3;
+            thumbnailWidth = thumbnailHeight;
+            break;
+        default:
+            //settings for a reactive mode here if needed. For now, it's just more 'below':
+            thumbnailHeight = 0.8*thumbnailWidth;
+            break;
     }
 
 

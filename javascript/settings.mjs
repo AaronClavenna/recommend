@@ -1,15 +1,14 @@
 const SETTINGS = {
     //ITEM_WIDTH is the size in pixels of individual recommendation item. If no value is given, defaults to 150px.
-    ITEM_WIDTH: 180, 
-    THUMBNAIL_SIZE: { 
-        // set the height and width for the thumbnails. Smaller images will expand to fill the space. Larger images will be resized down to the smallest value and the excess cropped to fix. If no values are given, defaults to the available width defined by ITEM_WIDTH. 
-        width: 180,
-        height: 130,
-    },
+    ITEM_WIDTH: 350, 
     //ORIENTATION is where captions will appear relative to the thumbnail. Options: 'below', 'aside', or leave blank '' for automatic determination based on available space
-    ORIENTATION: 'below',
+    ORIENTATION: 'aside',
     //CONTENT_TYPE is what kind of recommendations are desired - only internal, only external, or a mix. Options: 'organic', 'sponsored', 'mixed'
-    CONTENT_TYPE: 'mixed', 
+    CONTENT_TYPE: 'sponsored', 
+    //HEADER_TEXT: this is what will display in the header line above the reccomendations
+    HEADER_TEXT: 'AD CONTENT',
+    //SHOW_COMPNAY_LOGO: enter 1 to display, 0 to hide
+    SHOW_COMPANY_LOGO: 1,
 };
 
 // ENDPOINT is the URL supplied for getting results from Taboola 

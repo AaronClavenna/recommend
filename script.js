@@ -1,11 +1,26 @@
 import { calculateColumns } from "./javascript/gridCalculator.mjs";
 import { handleData } from "./javascript/handleData.mjs";
 import { renderRecommendationItem } from "./javascript/renderer.mjs";
+import { createHeader } from "./javascript/createHeader.mjs";
 import { SETTINGS } from "./javascript/settings.mjs";
 
 document.addEventListener('DOMContentLoaded', async function () {
     try {
-        const reccomendationContainer = document.getElementById('recommendations-container');
+
+        const contentContainer = document.getElementById('content-container');
+        if (!contentContainer) {
+            console.error('Content container not found.');
+            return;
+        }
+
+        createHeader();
+
+        const reccomendationContainer = document.createElement('div');
+        reccomendationContainer.id = 'recommendations-container';
+
+        contentContainer.appendChild(reccomendationContainer);
+
+
         const parsedData = await handleData();
 
         const itemWidth = 

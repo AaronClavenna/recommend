@@ -10,45 +10,45 @@ function resizeAndCropImage(thumbnailURL) {
     image.onload = () => {
       const { width, height } = image;
 
-    let newWidth, newHeight;
-    let offsetX = 0, offsetY = 0;
+      let newWidth, newHeight;
+      let offsetX = 0,
+        offsetY = 0;
 
-    const thumbnailAspectRatio = thumbnailWidth / thumbnailHeight;
-    const imageAspectRatio = width / height; 
+      const thumbnailAspectRatio = thumbnailWidth / thumbnailHeight;
+      const imageAspectRatio = width / height;
 
-    if ( imageAspectRatio > thumbnailAspectRatio) {
+      if (imageAspectRatio > thumbnailAspectRatio) {
         // resize by width
         newWidth = thumbnailWidth;
         newHeight = (newWidth / width) * height;
 
-        offsetY = (newHeight - thumbnailHeight) / 2;
-    } else {
+        offsetY = Math.max(0, (newHeight - thumbnailHeight) / 2);
+      } else {
         // resize by height
         newHeight = thumbnailHeight;
         newWidth = (newHeight / height) * width;
 
-        offsetX = (newWidth - thumbnailWidth) /2;
-    }
+        offsetX = Math.max(0, (newWidth - thumbnailWidth) / 2);
+      }
 
+      const canvas = document.createElement("canvas");
+      canvas.width = thumbnailWidth;
+      canvas.height = thumbnailHeight;
 
-    const canvas = document.createElement('canvas');
-    canvas.width = thumbnailWidth;
-    canvas.height = thumbnailHeight;
-
-    const context = canvas.getContext('2d');
-    context.drawImage(
-        image, 
-        -offsetX, 
-        -offsetY,
-        width + offsetX * 2,
-        height + offsetY * 2,
+      const context = canvas.getContext("2d");
+      context.drawImage(
+        image,
+        offsetX,
+        offsetY,
+        width - offsetX * 2,
+        height - offsetY * 2,
         0,
         0,
         thumbnailWidth,
-        thumbnailHeight,
-        );
+        thumbnailHeight
+      );
 
-    resolve(canvas.toDataURL());
+      resolve(canvas.toDataURL());
     };
 
     image.src = thumbnailURL;
