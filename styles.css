@@ -6,14 +6,11 @@ body {
   border: 1px solid firebrick;
   display: grid;
   grid-template-columns: repeat(var(--num-columns, 3), 1fr);
-  grid-gap: 20px;
 }
 
 .organic-recommendation-individual,
 .sponsored-recommendation-individual {
   border: 2px solid purple;
-  padding: 10px;
-  margin: 10px;
   width: 100%;
   max-width: var(--item-width, 150px);
 
@@ -41,9 +38,11 @@ a {
 a:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-
+.caption-area {
+  overflow-wrap: break-word;
+}
 .caption {
-  font-size: medium;
+  font-size: 0.9em;
   margin-top: 5px;
 }
 
