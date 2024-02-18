@@ -3,15 +3,20 @@ import { handleData } from "./javascript/handleData.mjs";
 import { renderRecommendationItem } from "./javascript/renderer.mjs";
 import { createHeader } from "./javascript/createHeader.mjs";
 import { SETTINGS } from "./javascript/settings.mjs";
+import { applyBaseStyles } from "./javascript/applyBaseStyles.mjs";
+
+
 document.addEventListener('DOMContentLoaded', async function () {
     
     try {
 
-        const contentContainer = document.getElementById('content-container');
+        const contentContainer = document.getElementById('recommendations-content-container');
         if (!contentContainer) {
             console.error('Content container not found.');
             return;
         }
+
+        applyBaseStyles();
 
         contentContainer.style.maxHeight = SETTINGS.CONTAINER_SIZE.HEIGHT || 'inherit';
         contentContainer.style.maxWidth = SETTINGS.CONTAINER_SIZE.WIDTH || 'inherit';

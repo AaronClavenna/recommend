@@ -1,7 +1,19 @@
 # recommend
 Recommendation Widget: embeddable, client-side widget for fetching organic/sponsored article recommendations. JS (Vanilla), responsive
 
-This widget allows you to customize its behavior using a set of configuration options, found in the file 'settings.mjs'. Adjust these settings to tailor the appearance and functionality of the widget. 
+This widget allows you to customize its behavior using a set of configuration options, found in the file 'settings.mjs'. Adjust these settings (described later in this file - see 'SETTINGS OVERVIEW') to tailor the appearance and functionality of the widget. 
+
+HOW TO USE: 
+
+Either download this file as a ZIP and unzip it into your directory, or clone the git repository this was found in. 
+
+Then, insert this code snippet into the body of your HTML file, in the location where you would like this widget to appear: 
+
+<div id="recommendations-content-container"></div>
+<script type="module" src="recommendationsScript.js" defer></script>
+
+ 
+!NOTE!: the src may need to be adjusted depending on into which directory you've placed this program's files. 
 
 SETTINGS OVERVIEW: 
 

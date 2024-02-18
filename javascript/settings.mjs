@@ -5,9 +5,9 @@ const SETTINGS = {
         WIDTH: '',
     },
     //ITEM_WIDTH is the size in pixels of individual recommendation item. If no value is given, defaults to 150px.
-    ITEM_WIDTH: 280, 
+    ITEM_WIDTH: '', 
     //ORIENTATION is where captions will appear relative to the thumbnail. Options: 'below', 'aside'
-    ORIENTATION: 'aside',
+    ORIENTATION: 'below',
     //CONTENT_TYPE is what kind of recommendations are desired - only internal, only external, or a mix. Options: 'organic', 'sponsored', 'mixed'
     CONTENT_TYPE: 'sponsored', 
     //HEADER_TEXT: this is what will display in the header line above the recommendations

@@ -2,7 +2,7 @@ import { applyHeaderStyles } from "./applyHeaderStyles.mjs";
 import { SETTINGS } from "./settings.mjs";
 
 function createHeader() {
-  const contentContainer = document.getElementById("content-container");
+  const contentContainer = document.getElementById("recommendations-content-container");
 
   if (!contentContainer) {
     return;
