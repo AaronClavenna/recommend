@@ -1,34 +1,30 @@
+import { resizeAndCropImage } from "./thumbnailHandler.mjs";
+import { applyStyles } from "./styleHandler.mjs";
+
 function renderRecommendationItem(item, container) {
-    const reccomendationElement = document.createElement('div');
-    const reccomendationClass = getClassFromType(item.origin);
 
-    reccomendationElement.classList.add(reccomendationClass);
+  resizeAndCropImage(item.thumbnailURL)
+    .then((resizedImage) => {
+      const reccomendationElement = document.createElement('div');
 
-    reccomendationElement.innerHTML = `
-    <a href=${item.url} target="_blank">
-      <div class="individual-internal">
-        <img src=${item.thumbnailURL} />
+      reccomendationElement.innerHTML = `
+      <a href=${item.url} target="_blank">
+        <div class="individual-internal">
+          <img src=${resizedImage} />
 
-        <div class="caption-area">
-          <p class="caption">${item.name}</p>
-          <p class="source">${item.branding}</p>
+          <div class="caption-area">
+            <p class="caption">${item.name}</p>
+            <p class="source">${item.branding}</p>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+      `;
 
-    `;
-    container.appendChild(reccomendationElement);
+      applyStyles(reccomendationElement, item);
+
+      container.appendChild(reccomendationElement);
+  });
 }
 
-function getClassFromType(type) {
-    switch (type) {
-        case 'sponsored':
-            return 'sponsored-recommendation-individual';
-        case 'organic':
-            return 'organic-recommendation-individual';
-        default:
-            return null;
-    }
-}
 
 export { renderRecommendationItem };

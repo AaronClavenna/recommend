@@ -1,4 +1,4 @@
-import { ENDPOINT } from "./settings.js";
+import { ENDPOINT } from "./settings.mjs";
 
 const API_ENDPOINT = ENDPOINT;
 
