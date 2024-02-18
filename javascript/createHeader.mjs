@@ -24,7 +24,7 @@ function createHeader() {
   if (SETTINGS.SHOW_COMPANY_LOGO) {
     const rightHeaderText = document.createElement("p");
     rightHeaderText.classList.add("header-text");
-    rightHeaderText.textContent = "by Taboola";
+    rightHeaderText.textContent = "by Company";
 
     //could also put an icon here, but I don't have one
 

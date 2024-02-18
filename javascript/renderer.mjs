@@ -3,9 +3,9 @@ import { applyStyles } from "./styleHandler.mjs";
 
 function renderRecommendationItem(item, container) {
   resizeAndCropImage(item.thumbnailURL).then((resizedImage) => {
-    const reccomendationElement = document.createElement("div");
+    const recommendationElement = document.createElement("div");
 
-    reccomendationElement.innerHTML = `
+    recommendationElement.innerHTML = `
       <a href=${item.url} target="_blank">
         <div class="individual-internal">
           <img src=${resizedImage} />
@@ -18,9 +18,9 @@ function renderRecommendationItem(item, container) {
       </a>
       `;
 
-    applyStyles(reccomendationElement, item);
+    applyStyles(recommendationElement, item);
 
-    container.appendChild(reccomendationElement);
+    container.appendChild(recommendationElement);
   });
 }
 

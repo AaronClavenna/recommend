@@ -1,13 +1,13 @@
 import { SETTINGS } from "./settings.mjs";
 
-function applyStyles(reccomendationElement, item) {
-  const reccomendationClass = getClassFromType(item.origin);
-  reccomendationElement.classList.add(reccomendationClass);
+function applyStyles(recommendationElement, item) {
+  const recommendationClass = getClassFromType(item.origin);
+  recommendationElement.classList.add(recommendationClass);
 
-  const captionArea = reccomendationElement.querySelector(".caption-area");
+  const captionArea = recommendationElement.querySelector(".caption-area");
   if (captionArea) {
     captionArea.style.flexGrow = 1;
-    const source = reccomendationElement.querySelector(".source");
+    const source = recommendationElement.querySelector(".source");
     if (source) {
       source.style.marginTop = "auto";
     }
@@ -20,7 +20,7 @@ function applyStyles(reccomendationElement, item) {
       break;
     case "aside":
       //set style for text being aside thumbnail
-      applyAsideStyles(reccomendationElement);
+      applyAsideStyles(recommendationElement);
       break;
     default:
       //set style for text being sometimes aside, sometimes below, depending on which fits
@@ -28,8 +28,8 @@ function applyStyles(reccomendationElement, item) {
   }
 }
 
-function applyAsideStyles(reccomendationElement) {
-  const individualInternal = reccomendationElement.querySelector(
+function applyAsideStyles(recommendationElement) {
+  const individualInternal = recommendationElement.querySelector(
     ".individual-internal"
   );
   if (individualInternal) {
@@ -38,7 +38,7 @@ function applyAsideStyles(reccomendationElement) {
     individualInternal.style.alignItems = "center";
   }
 
-  const captionArea = reccomendationElement.querySelector(".caption-area");
+  const captionArea = recommendationElement.querySelector(".caption-area");
   if (captionArea) {
     captionArea.style.marginLeft = "6px";
     captionArea.style.marginTop = "6px";
